@@ -1,0 +1,26 @@
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Patrick Hand', 'Caveat', cursive, sans-serif;
+  background-color: #45403b;
+  background-image: url('./texture.png');
+  background-repeat: repeat;
+  color: #edefe6;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* {
+  box-sizing: border-box;
+}
