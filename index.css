@@ -1,11 +1,4 @@
-/* Handwritten Paper Theme & Color Palette:
-   1. #EDEFE6 (Lightest: Cream White Chalk)
-   2. #C9C4BA (Medium-Light: Kraft Beige Sand)
-   3. #45403B (Medium-Dark: Warm Chalkboard Charcoal - Main Background)
-   4. #241E17 (Darkest: Deep Charcoal Espresso - Reverted to Previous Tone)
-*/
-
-/* Hide scrollbars */
+/* Hide browser scrollbars */
 ::-webkit-scrollbar {
   display: none !important;
 }
@@ -21,46 +14,50 @@ html, body {
   font-family: 'Patrick Hand', 'Caveat', cursive, sans-serif;
 }
 
-/* ==========================================================================
-   1. STICKY FLOATING HAND-DRAWN NAVBAR
-   ========================================================================== */
+/* Accessibility focus indicator (R-32) */
+:focus-visible {
+  outline: 2px dashed #c9c4ba !important;
+  outline-offset: 4px !important;
+}
+
+/* Sticky floating journal header navbar */
 .navbar {
   position: sticky;
   top: 16px;
   z-index: 1000;
-  width: calc(100% - 80px);
-  max-width: 1200px;
+  width: calc(100% - 64px);
+  max-width: 1120px;
   margin: 16px auto 0 auto;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 32px;
-  background-color: rgba(36, 30, 23, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background-color: rgba(36, 30, 23, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: 1.8px dashed rgba(237, 239, 230, 0.45);
-  box-shadow: 0 10px 28px rgba(36, 30, 23, 0.4);
+  border: 2px dashed #c9c4ba;
+  box-shadow: 0 8px 24px rgba(36, 30, 23, 0.45);
   transition: all 0.3s ease;
 }
 
 .moons-birthday {
   font-family: 'Caveat', cursive;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #edefe6;
 }
 
-.birthday {
+.brand-birthday {
   color: #c9c4ba;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 
 .nav-item {
@@ -69,29 +66,28 @@ html, body {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
-  padding: 4px 14px;
-  border-radius: 12px;
+  padding: 4px 16px;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   transition: all 0.25s ease;
 }
 
-.nav-item:hover {
-  color: #c9c4ba;
-  background-color: rgba(201, 196, 186, 0.15);
+.nav-item:hover,
+.nav-item:focus-visible {
+  color: #241e17;
+  background-color: #c9c4ba;
 }
 
-/* ==========================================================================
-   2. MAIN CONTAINER & FLOATING DOODLES
-   ========================================================================== */
+/* Main scrapbook container */
 .main-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
   box-sizing: border-box;
   position: relative;
 }
 
-/* Floating Background SVG Elements */
+/* Floating background svg decorations */
 .bg-decorations {
   position: absolute;
   top: 0;
@@ -108,39 +104,154 @@ html, body {
   width: 40px;
   height: 40px;
   stroke: #c9c4ba;
-  opacity: 0.4;
+  opacity: 0.35;
   animation: floatAnim 6s ease-in-out infinite alternate;
 }
 
-.decor-1 { top: 100px; right: 4%; animation-delay: 0s; width: 48px; height: 48px; }
-.decor-2 { top: 320px; left: 3%; animation-delay: 1.2s; width: 34px; height: 34px; }
-.decor-3 { top: 750px; right: 5%; animation-delay: 2.4s; width: 52px; height: 52px; }
+.decor-1 { top: 96px; right: 4%; animation-delay: 0s; width: 48px; height: 48px; }
+.decor-2 { top: 320px; left: 3%; animation-delay: 1.2s; width: 32px; height: 32px; }
+.decor-3 { top: 768px; right: 5%; animation-delay: 2.4s; width: 48px; height: 48px; }
 .decor-4 { top: 1200px; left: 4%; animation-delay: 0.8s; width: 40px; height: 40px; }
-.decor-5 { top: 1650px; right: 6%; animation-delay: 1.8s; width: 44px; height: 44px; }
-.decor-6 { top: 2100px; left: 5%; animation-delay: 3s; width: 42px; height: 42px; }
+.decor-5 { top: 1640px; right: 6%; animation-delay: 1.8s; width: 44px; height: 44px; }
+.decor-6 { top: 2080px; left: 5%; animation-delay: 3s; width: 40px; height: 40px; }
 
 @keyframes floatAnim {
   0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-16px) rotate(8deg); }
-  100% { transform: translateY(0px) rotate(-8deg); }
+  50% { transform: translateY(-12px) rotate(6deg); }
+  100% { transform: translateY(0px) rotate(-6deg); }
 }
 
-/* ==========================================================================
-   3. HANDWRITTEN ASYMMETRIC SECTIONS
-   ========================================================================== */
+/* Scrapbook tape, paper clip, and stamp decorations */
+.washi-tape {
+  position: absolute;
+  height: 26px;
+  width: 100px;
+  background-color: rgba(201, 196, 186, 0.75);
+  border: 1px dashed rgba(69, 64, 59, 0.6);
+  box-shadow: 0 2px 6px rgba(36, 30, 23, 0.25);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.tape-top-right {
+  top: -14px;
+  right: 24px;
+  transform: rotate(6deg);
+}
+
+.tape-top-left {
+  top: -14px;
+  left: 24px;
+  transform: rotate(-5deg);
+}
+
+.tape-modal {
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 140px;
+}
+
+.tape-photo {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 76px;
+  height: 20px;
+}
+
+.paper-clip {
+  position: absolute;
+  top: -16px;
+  right: 18px;
+  width: 22px;
+  height: 48px;
+  border: 3px solid #c9c4ba;
+  border-radius: 12px;
+  z-index: 12;
+  pointer-events: none;
+  box-shadow: 2px 4px 8px rgba(36, 30, 23, 0.4);
+}
+
+.paper-clip.clip-left {
+  right: auto;
+  left: 18px;
+  transform: rotate(-12deg);
+}
+
+.tag-stamp-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.journal-stamp {
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  font-weight: 700;
+  color: #c9c4ba;
+  border: 2px dashed #c9c4ba;
+  padding: 3px 14px;
+  border-radius: 8px;
+  transform: rotate(-4deg);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.postage-stamp {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 56px;
+  height: 64px;
+  border: 2px dashed #c9c4ba;
+  background-color: #45403b;
+  color: #edefe6;
+  font-family: 'Caveat', cursive;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(4deg);
+  box-shadow: 0 4px 10px rgba(36, 30, 23, 0.3);
+}
+
+.postmark-stamp {
+  position: absolute;
+  top: 36px;
+  right: 60px;
+  width: 68px;
+  height: 68px;
+  border: 1.5px dashed rgba(201, 196, 186, 0.6);
+  border-radius: 50%;
+  color: rgba(201, 196, 186, 0.7);
+  font-family: 'Caveat', cursive;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+/* Page sections with asymmetric journal layout */
 .section {
   width: 100%;
-  min-height: 520px;
+  min-height: 480px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
-  padding: 70px 0;
+  gap: 64px;
+  padding: 64px 0;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  scroll-margin-top: 90px;
+  scroll-margin-top: 96px;
 }
 
 .section-alt {
@@ -170,10 +281,9 @@ html, body {
   padding: 4px 18px;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   border: 1.5px solid #edefe6;
-  margin-bottom: 4px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .tag-icon {
@@ -184,7 +294,7 @@ html, body {
 
 .section-title {
   font-family: 'Caveat', cursive;
-  font-size: 88px;
+  font-size: 84px;
   font-weight: 700;
   letter-spacing: 0.01em;
   color: #edefe6;
@@ -194,55 +304,99 @@ html, body {
 
 .section-desc {
   font-family: 'Patrick Hand', cursive;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 400;
   line-height: 1.35;
   color: #c9c4ba;
-  max-width: 680px;
+  max-width: 640px;
   margin: 0;
 }
 
-/* Hero Graphic Visual Element */
-.hero-graphic {
+/* Journal scrapbook card containers */
+.journal-card {
+  position: relative;
+  background-color: #241e17;
+  border: 2px dashed #c9c4ba;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(36, 30, 23, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: rotate(-1deg);
+}
+
+.journal-card:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 16px 40px rgba(36, 30, 23, 0.55);
+}
+
+/* Hero graphic polaroid element */
+.journal-polaroid-hero {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 24px 24px 16px 24px;
+  background: #241e17;
+  border-radius: 16px;
+  border: 2px dashed #c9c4ba;
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
+}
+
+.journal-polaroid-hero:hover {
+  transform: rotate(0deg) scale(1.02);
 }
 
 .moon-circle {
-  width: 210px;
-  height: 210px;
+  width: 192px;
+  height: 192px;
   border-radius: 50%;
-  background: #241e17;
+  background: #45403b;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px dashed #c9c4ba;
-  box-shadow: 0 10px 30px rgba(36, 30, 23, 0.4);
+  border: 2px dashed #c9c4ba;
+  box-shadow: 0 8px 24px rgba(36, 30, 23, 0.4);
 }
 
 .moon-vector {
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
   stroke: #edefe6;
 }
 
-/* Interactive Box Containers for Action Buttons */
+.hero-polaroid-label {
+  margin-top: 14px;
+  font-family: 'Caveat', cursive;
+  font-size: 26px;
+  font-weight: 700;
+  color: #edefe6;
+}
+
+/* Airmail letter envelope card */
+.envelope-card {
+  transform: rotate(1.5deg);
+  border-style: solid;
+  border-width: 3px;
+  border-color: #c9c4ba;
+}
+
+/* Interactive box for section action buttons */
 .interactive-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  min-width: 280px;
+  gap: 24px;
+  min-width: 320px;
 }
 
 .icon-badge {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: #241e17;
+  background: #45403b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,34 +413,35 @@ html, body {
 
 @keyframes bounceAnim {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-8px); }
 }
 
 .polaroid-stack {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-bottom: 6px;
+  gap: 16px;
+  margin-bottom: 8px;
 }
 
 .polaroid-mini {
-  width: 54px;
-  height: 54px;
-  background: #241e17;
+  width: 76px;
+  height: 76px;
+  background: #45403b;
   border-radius: 12px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 20px rgba(36, 30, 23, 0.3);
-  border: 2px dashed #c9c4ba;
+  border: 2px solid #c9c4ba;
   transition: transform 0.3s ease;
 }
 
-.polaroid-mini svg {
-  width: 28px;
-  height: 28px;
-  stroke: #edefe6;
+.mini-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .polaroid-mini.p1 {
@@ -305,21 +460,25 @@ html, body {
   transform: rotate(14deg) scale(1.08);
 }
 
-/* Gift Section (Centered Layout) */
+/* Film frame wrapper for gift video */
+.film-frame {
+  transform: rotate(-1deg);
+  border-style: solid;
+}
+
+/* Centered layout for gift section */
 .section-gift {
   flex-direction: column;
   text-align: center;
 }
 
-/* ==========================================================================
-   4. HANDWRITTEN BUTTONS
-   ========================================================================== */
+/* Hand-drawn styled buttons */
 .btn {
-  min-width: 220px;
-  height: 64px;
-  padding: 0 42px;
+  min-width: 200px;
+  height: 56px;
+  padding: 0 36px;
   font-family: 'Caveat', cursive;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 700;
   color: #241e17;
   background: #c9c4ba;
@@ -329,24 +488,23 @@ html, body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(36, 30, 23, 0.3);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 6px 18px rgba(36, 30, 23, 0.35);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.btn:hover {
-  transform: translateY(-3px) scale(1.05);
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-3px) scale(1.04);
   background: #edefe6;
   color: #241e17;
-  box-shadow: 0 10px 24px rgba(36, 30, 23, 0.4);
+  box-shadow: 0 10px 24px rgba(36, 30, 23, 0.45);
 }
 
 .btn:active {
   transform: translateY(1px) scale(0.98);
 }
 
-/* ==========================================================================
-   5. IMMERSIVE FULL-FILL VIDEO WRAPPER
-   ========================================================================== */
+/* Immersive video wrapper */
 .video-wrapper {
   display: flex;
   flex-direction: column;
@@ -354,21 +512,21 @@ html, body {
   gap: 24px;
   width: 100%;
   max-width: 860px;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .gift-video {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 20px;
-  background-color: transparent;
+  border-radius: 16px;
+  background-color: #241e17;
   box-shadow: 0 16px 36px rgba(36, 30, 23, 0.45);
-  border: 3px dashed #c9c4ba;
+  border: 2px dashed #c9c4ba;
   outline: none;
 }
 
-/* Universal Fullscreen Reset */
+/* Universal fullscreen reset */
 *:fullscreen,
 *:-webkit-full-screen,
 *:-moz-full-screen,
@@ -401,7 +559,7 @@ video:-ms-fullscreen,
   padding: 0 !important;
 }
 
-/* Chrome / Safari / Edge WebKit Shadow DOM Controls & Container Reset */
+/* Webkit shadow DOM controls reset */
 ::-webkit-media-controls,
 ::-webkit-media-controls-enclosure,
 ::-webkit-media-controls-panel,
@@ -412,7 +570,6 @@ video::-webkit-media-controls-panel {
   border: none !important;
 }
 
-/* JS Dynamic Class Trigger for Fullscreen */
 .gift-video.fullscreen-active,
 video.fullscreen-active {
   border-radius: 0px !important;
@@ -421,16 +578,14 @@ video.fullscreen-active {
   outline: none !important;
 }
 
-/* ==========================================================================
-   6. HANDWRITTEN MODAL POPUPS & CLEAN 'X' CLOSE BUTTON
-   ========================================================================== */
+/* Modal popups styled like a opened vintage diary */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(36, 30, 23, 0.75);
+  background-color: rgba(36, 30, 23, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
@@ -440,7 +595,7 @@ video.fullscreen-active {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  padding: 20px;
+  padding: 24px;
   box-sizing: border-box;
 }
 
@@ -456,68 +611,79 @@ video.fullscreen-active {
   background-size: auto;
   color: #edefe6;
   width: 100%;
-  max-width: 660px;
+  max-width: 680px;
   max-height: 85vh;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   padding: 40px;
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0 20px 60px rgba(36, 30, 23, 0.6);
-  transform: scale(0.88);
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 24px 64px rgba(36, 30, 23, 0.65);
+  transform: scale(0.92);
+  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   border: 2.5px solid #c9c4ba;
 }
 
 .modal-card-lg {
-  max-width: 900px;
+  max-width: 920px;
 }
 
 .modal-overlay.active .modal-card {
   transform: scale(1);
 }
 
-/* Simple 'X' Close Button without circular container */
+.bookmark-ribbon {
+  position: absolute;
+  top: -10px;
+  left: 36px;
+  width: 20px;
+  height: 60px;
+  background: #c9c4ba;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 4px 8px rgba(36, 30, 23, 0.4);
+  z-index: 15;
+}
+
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 24px;
-  width: auto;
-  height: auto;
-  padding: 4px 8px;
-  background: transparent !important;
-  color: #edefe6 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  top: 16px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  color: #edefe6;
+  border: 2px dashed #c9c4ba;
+  border-radius: 12px;
   font-family: 'Caveat', cursive;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-  opacity: 0.85;
+  transition: all 0.2s ease;
+  z-index: 20;
 }
 
-.modal-close:hover {
-  color: #c9c4ba !important;
-  background: transparent !important;
-  transform: scale(1.15);
-  opacity: 1;
+.modal-close:hover,
+.modal-close:focus-visible {
+  color: #241e17;
+  background: #c9c4ba;
+  transform: scale(1.1);
 }
 
 .modal-header {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   text-align: center;
 }
 
 .modal-title {
   font-family: 'Caveat', cursive;
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 700;
   color: #edefe6;
   margin: 0;
@@ -527,76 +693,67 @@ video.fullscreen-active {
   overflow-y: auto;
   font-family: 'Patrick Hand', cursive;
   font-size: 22px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: #edefe6;
   text-align: left;
-  padding-right: 14px;
+  padding-right: 16px;
   scrollbar-width: thin !important;
   scrollbar-color: #c9c4ba #241e17 !important;
 }
 
-/* Custom Themed Scrollbar for Popup Windows */
 .modal-body::-webkit-scrollbar {
-  width: 10px !important;
+  width: 8px !important;
   display: block !important;
 }
 
 .modal-body::-webkit-scrollbar-track {
   background: #241e17 !important;
-  border-radius: 10px !important;
-  border: 1px solid rgba(201, 196, 186, 0.3) !important;
+  border-radius: 8px !important;
 }
 
 .modal-body::-webkit-scrollbar-thumb {
   background: #c9c4ba !important;
-  border-radius: 10px !important;
-  border: 2px solid #241e17 !important;
+  border-radius: 8px !important;
 }
 
 .modal-body::-webkit-scrollbar-thumb:hover {
   background: #edefe6 !important;
 }
 
-.modal-highlight {
-  background-color: #241e17;
-  padding: 16px 20px;
-  border-radius: 14px;
-  border-left: 4px solid #c9c4ba;
-  font-family: 'Caveat', cursive;
-  font-size: 28px;
-  font-weight: 700;
-  color: #edefe6;
-  margin-top: 20px;
-  text-align: center;
-}
-
-/* Gallery Grid */
+/* Scrapbook gallery grid with polaroid items */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 8px 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 12px 0;
 }
 
-.gallery-card {
+.gallery-card.polaroid-item {
+  position: relative;
   background-color: #241e17;
-  border-radius: 18px;
-  padding: 14px;
-  box-shadow: 0 6px 16px rgba(36, 30, 23, 0.4);
-  transition: transform 0.3s ease;
-  border: 2px dashed rgba(201, 196, 186, 0.4);
+  border-radius: 14px;
+  padding: 18px 18px 24px 18px;
+  box-shadow: 0 10px 24px rgba(36, 30, 23, 0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #c9c4ba;
 }
 
-.gallery-card:hover {
-  transform: translateY(-4px);
+.polaroid-item.item-1 { transform: rotate(-3deg); }
+.polaroid-item.item-2 { transform: rotate(2deg); }
+.polaroid-item.item-3 { transform: rotate(-1.5deg); }
+.polaroid-item.item-4 { transform: rotate(2.5deg); }
+
+.gallery-card.polaroid-item:hover {
+  transform: rotate(0deg) translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(36, 30, 23, 0.55);
 }
 
 .photo-frame {
   width: 100%;
   height: 220px;
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
-  border: 2px solid #c9c4ba;
+  border: 1.5px solid #c9c4ba;
 }
 
 .photo-frame img {
@@ -606,47 +763,41 @@ video.fullscreen-active {
 }
 
 .photo-caption {
-  margin: 12px 0 2px 0;
+  margin: 14px 0 0 0;
   font-family: 'Caveat', cursive;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: #edefe6;
   text-align: center;
 }
 
-/* ==========================================================================
-   7. RESPONSIVE DESIGN
-   ========================================================================== */
-/* ==========================================================================
-   7. RESPONSIVE DESIGN (TABLET & MOBILE OPTIMIZATIONS)
-   ========================================================================== */
+/* Responsive layout optimizations */
 @media (max-width: 900px) {
   .main-container {
-    padding: 0 20px;
+    padding: 0 24px;
   }
   .navbar {
     width: calc(100% - 32px);
-    margin: 10px auto 0 auto;
+    margin: 12px auto 0 auto;
     padding: 12px 20px;
     flex-direction: column;
-    gap: 10px;
-    border-radius: 24px;
+    gap: 12px;
   }
   .moons-birthday {
     font-size: 28px;
   }
   .nav-links {
-    gap: 12px;
+    gap: 16px;
   }
   .nav-item {
     font-size: 20px;
-    padding: 3px 10px;
+    padding: 4px 12px;
   }
   .section, .section-alt {
     flex-direction: column;
     text-align: center;
     gap: 32px;
-    padding: 50px 10px;
+    padding: 48px 0;
     min-height: auto;
   }
   .section-text {
@@ -661,8 +812,8 @@ video.fullscreen-active {
     max-width: 100%;
   }
   .moon-circle {
-    width: 170px;
-    height: 170px;
+    width: 160px;
+    height: 160px;
   }
   .moon-vector {
     width: 80px;
@@ -670,18 +821,17 @@ video.fullscreen-active {
   }
   .btn {
     min-width: 180px;
-    height: 56px;
+    height: 52px;
     font-size: 26px;
   }
 }
 
 @media (max-width: 600px) {
   .navbar {
-    width: calc(100% - 20px);
+    width: calc(100% - 24px);
     margin: 8px auto 0 auto;
-    padding: 10px 14px;
+    padding: 12px 16px;
     gap: 8px;
-    border-radius: 20px;
   }
   .moons-birthday {
     font-size: 24px;
@@ -692,11 +842,11 @@ video.fullscreen-active {
     justify-content: center;
   }
   .nav-item {
-    font-size: 17px;
-    padding: 2px 8px;
+    font-size: 18px;
+    padding: 4px 10px;
   }
   .section, .section-alt {
-    padding: 40px 6px;
+    padding: 32px 0;
     gap: 24px;
   }
   .section-title {
@@ -704,12 +854,16 @@ video.fullscreen-active {
     line-height: 1.15;
   }
   .section-desc {
-    font-size: 21px;
+    font-size: 22px;
     line-height: 1.35;
   }
   .cute-tag {
     font-size: 16px;
-    padding: 3px 14px;
+    padding: 4px 12px;
+  }
+  .journal-stamp {
+    font-size: 14px;
+    padding: 2px 8px;
   }
   .moon-circle {
     width: 130px;
@@ -721,6 +875,7 @@ video.fullscreen-active {
   }
   .interactive-box {
     min-width: 100%;
+    padding: 24px 16px;
   }
   .icon-badge {
     width: 64px;
@@ -731,33 +886,24 @@ video.fullscreen-active {
     height: 32px;
   }
   .polaroid-mini {
-    width: 46px;
-    height: 46px;
-  }
-  .polaroid-mini svg {
-    width: 22px;
-    height: 22px;
+    width: 60px;
+    height: 60px;
   }
   .btn {
     min-width: 160px;
-    height: 52px;
+    height: 48px;
     font-size: 24px;
-    padding: 0 30px;
+    padding: 0 24px;
   }
   .video-wrapper {
-    margin-top: 4px;
+    margin-top: 8px;
     gap: 16px;
+    padding: 16px;
   }
-  .gift-video {
-    border-radius: 14px;
-    border-width: 2px;
-  }
-  /* Mobile Modal Optimization */
   .modal-card {
     width: 95vw;
     max-height: 88vh;
-    padding: 28px 18px 22px 18px;
-    border-radius: 24px;
+    padding: 28px 16px 20px 16px;
   }
   .modal-title {
     font-size: 32px;
@@ -769,8 +915,10 @@ video.fullscreen-active {
   }
   .modal-close {
     top: 12px;
-    right: 16px;
-    font-size: 30px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
   }
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -782,9 +930,8 @@ video.fullscreen-active {
   .photo-caption {
     font-size: 20px;
   }
-  .decor {
-    opacity: 0.25;
-    width: 28px !important;
-    height: 28px !important;
+  .washi-tape {
+    height: 20px;
+    width: 80px;
   }
 }

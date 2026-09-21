@@ -16,13 +16,13 @@
 
 <body>
 
-	<!-- Sticky Floating Hand-Drawn Header Navbar -->
-	<header class="navbar">
+	<!-- Floating journal header navbar -->
+	<header class="navbar" role="banner">
 		<div class="moons-birthday">
-			<span>Moon’s </span>
-			<span class="birthday">Birthday</span>
+			<span class="brand-moon">Moon’s </span>
+			<span class="brand-birthday">Birthday</span>
 		</div>
-		<nav class="nav-links">
+		<nav class="nav-links" aria-label="Main Navigation">
 			<a href="#about" class="nav-item">About</a>
 			<a href="#message" class="nav-item">Message</a>
 			<a href="#gallery" class="nav-item">Gallery</a>
@@ -31,7 +31,7 @@
 	</header>
 
 	<main class="main-container">
-		<!-- Floating Hand-Drawn Doodle Background Decor -->
+		<!-- Background floating doodles -->
 		<div class="bg-decorations" aria-hidden="true">
 			<svg class="decor decor-1 svg-shape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a7 7 0 0 1-7.54-7.54C12.92 3.04 12.46 3 12 3z"/></svg>
 			<svg class="decor decor-2 svg-shape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
@@ -41,92 +41,98 @@
 			<svg class="decor decor-6 svg-shape" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a7 7 0 0 1-7.54-7.54C12.92 3.04 12.46 3 12 3z"/></svg>
 		</div>
 
-		<!-- Hero / About Section -->
+		<!-- Hero section notebook page -->
 		<section class="section section-hero" id="about">
 			<div class="section-text hero-text">
-				<span class="cute-tag">
-					<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
-					Happy Birthday
-				</span>
+				<div class="tag-stamp-wrapper">
+					<span class="cute-tag">
+						<svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>
+						Happy Birthday
+					</span>
+					<div class="journal-stamp" aria-hidden="true">MOON DAY • 365</div>
+				</div>
 				<h1 class="section-title">It’s Your Birthday</h1>
 				<p class="section-desc">The Moon has revolved around the earth for another 365 days. This is the time to celebrate.</p>
 			</div>
-			<div class="hero-graphic">
+			<div class="hero-graphic journal-polaroid-hero">
+				<div class="washi-tape tape-top-right"></div>
+				<div class="paper-clip"></div>
 				<div class="moon-circle">
 					<svg class="moon-vector" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a7 7 0 0 1-7.54-7.54C12.92 3.04 12.46 3 12 3z"/></svg>
 				</div>
+				<span class="hero-polaroid-label">Moon Day ✨</span>
 			</div>
 		</section>
 
-		<!-- Message Section -->
+		<!-- Message section letter envelope card -->
 		<section class="section section-alt" id="message">
 			<div class="section-text">
 				<h2 class="section-title">A Message for You</h2>
 				<p class="section-desc">A special letter written just for you on this memorable day.</p>
 			</div>
-			<div class="interactive-box">
+			<div class="interactive-box journal-card envelope-card">
+				<div class="washi-tape tape-top-left"></div>
+				<div class="postage-stamp" aria-hidden="true">LOVE 2026</div>
+				<div class="postmark-stamp" aria-hidden="true">SPECIAL DELIV.</div>
 				<div class="icon-badge">
 					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
 						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
 						<polyline points="22,6 12,13 2,6" />
 					</svg>
 				</div>
-				<button class="btn" id="openMessageBtn">Read</button>
+				<button class="btn" id="openMessageBtn">Read Letter</button>
 			</div>
 		</section>
 
-		<!-- Gallery Section -->
+		<!-- Gallery section scrapbook album teaser -->
 		<section class="section" id="gallery">
 			<div class="section-text">
 				<h2 class="section-title">Gallery of Our Love</h2>
-				<p class="section-desc">The Moon has revolved around the earth for another 365 days. This is the time to celebrate.</p>
+				<p class="section-desc">A collection of our favorite moments and cherished memories together.</p>
 			</div>
-			<div class="interactive-box gallery-teaser-box">
+			<div class="interactive-box gallery-teaser-box journal-card album-card">
+				<div class="washi-tape tape-top-right"></div>
+				<div class="paper-clip clip-left"></div>
 				<div class="polaroid-stack">
 					<div class="polaroid-mini p1">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-							<rect x="3" y="3" width="18" height="18" rx="2" />
-							<circle cx="8.5" cy="8.5" r="1.5" />
-							<polyline points="21 15 16 10 5 21" />
-						</svg>
+						<img src="1.jpg" alt="Mini Preview 1" class="mini-thumb" />
 					</div>
 					<div class="polaroid-mini p2">
-						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-							<path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-							<circle cx="12" cy="13" r="4" />
-						</svg>
+						<img src="2.jpg" alt="Mini Preview 2" class="mini-thumb" />
 					</div>
 				</div>
-				<button class="btn" id="openGalleryBtn">Open Gallery</button>
+				<button class="btn" id="openGalleryBtn">Open Album</button>
 			</div>
 		</section>
 
-		<!-- Gift / Present Section -->
+		<!-- Gift section video frame -->
 		<section class="section section-gift" id="present">
 			<div class="section-text text-center">
 				<h2 class="section-title">A Gift for You</h2>
-				<p class="section-desc">I have a present for you...</p>
+				<p class="section-desc">I have a special video present for you...</p>
 			</div>
 
-			<!-- Video Player -->
-			<div class="video-wrapper">
+			<div class="video-wrapper journal-card film-frame">
+				<div class="washi-tape tape-top-left"></div>
 				<video class="gift-video" id="giftVideo" controls preload="metadata">
 					<source src="Project MOON.mov" type="video/mp4">
-					Your browser does not support the video tag.
+					Browser Anda tidak mendukung pemutar video.
 				</video>
-				<button class="btn" id="watchBtn">Watch</button>
+				<button class="btn" id="watchBtn">Watch Film</button>
 			</div>
 		</section>
 	</main>
 
-	<!-- Modal Popup Message -->
-	<div class="modal-overlay" id="messageModal" aria-hidden="true">
-		<div class="modal-card">
-			<button class="modal-close" id="closeMessageBtn" aria-label="Close Message">&times;</button>
+	<!-- Modal message diary card -->
+	<div class="modal-overlay" id="messageModal" aria-hidden="true" role="dialog" aria-labelledby="messageModalTitle">
+		<div class="modal-card diary-modal">
+			<div class="bookmark-ribbon" aria-hidden="true"></div>
+			<div class="washi-tape tape-modal"></div>
+			<button class="modal-close" id="closeMessageBtn" aria-label="Tutup pesan">&times;</button>
 			<div class="modal-header">
-				<h3 class="modal-title">A Special Message for You</h3>
+				<h3 class="modal-title" id="messageModalTitle">A Special Message for You</h3>
 			</div>
-			<div class="modal-body">
+			<div class="modal-body notebook-paper">
 				<p>Halooo sayangkuuu apa kabarr?? Semoga pas kamu baca ini kabarmu sedang baik-baik saja yaaa. Oh iya, if you're reading this, berarti you've turned 20 dong?! Selamat ulang tahun yaaa sayangkuuuu!!!! Ciee udah kepala 2 duluan nieh ninggalin aku HAHAHAH ga kerasa banget yah, hidup sudah makin serius...</p>
 				<p>Di tengah kehidupan yang makin serius ini, I hope you'll still find goodness in it. And I hope that everything you're dealing with gets easier, and that everything works out for you.</p>
 				<p>Sayang, kamu inget ga (probably not sih, aku pun perlu re-read HAHAHAH) waktu aku bilang that "I'm so grateful that I could met you." and that "You're everything I could ever ask for"? Padahal waktu itu bisa dibilang kita baru kenal ya... But, you know what? Those points stand still.</p>
@@ -137,36 +143,42 @@
 		</div>
 	</div>
 
-	<!-- Modal Popup Gallery -->
-	<div class="modal-overlay" id="galleryModal" aria-hidden="true">
-		<div class="modal-card modal-card-lg">
-			<button class="modal-close" id="closeGalleryBtn" aria-label="Close Gallery">&times;</button>
+	<!-- Modal gallery scrapbook popup -->
+	<div class="modal-overlay" id="galleryModal" aria-hidden="true" role="dialog" aria-labelledby="galleryModalTitle">
+		<div class="modal-card modal-card-lg diary-modal">
+			<div class="bookmark-ribbon" aria-hidden="true"></div>
+			<div class="washi-tape tape-modal"></div>
+			<button class="modal-close" id="closeGalleryBtn" aria-label="Tutup galeri">&times;</button>
 			<div class="modal-header">
-				<h3 class="modal-title">Gallery of Our Love</h3>
+				<h3 class="modal-title" id="galleryModalTitle">Gallery of Our Love</h3>
 			</div>
 			<div class="modal-body">
 				<div class="gallery-grid">
-					<div class="gallery-card">
+					<div class="gallery-card polaroid-item item-1">
+						<div class="washi-tape tape-photo"></div>
 						<div class="photo-frame">
-							<img src="1.jpg" alt="Moment 1" />
+							<img src="1.jpg" alt="Moments 1 - Our first day as official freshman" />
 						</div>
 						<p class="photo-caption">Our first day as an official freshman</p>
 					</div>
-					<div class="gallery-card">
+					<div class="gallery-card polaroid-item item-2">
+						<div class="washi-tape tape-photo"></div>
 						<div class="photo-frame">
-							<img src="2.jpg" alt="Moment 2" />
+							<img src="2.jpg" alt="Moments 2 - Celebrating your first birthday since we got together" />
 						</div>
 						<p class="photo-caption">Celebrating your first birthday since we got together</p>
 					</div>
-					<div class="gallery-card">
+					<div class="gallery-card polaroid-item item-3">
+						<div class="washi-tape tape-photo"></div>
 						<div class="photo-frame">
-							<img src="3.jpeg" alt="Moment 3" />
+							<img src="3.jpeg" alt="Moments 3 - Our first concert!" />
 						</div>
 						<p class="photo-caption">Our first concert!</p>
 					</div>
-					<div class="gallery-card">
+					<div class="gallery-card polaroid-item item-4">
+						<div class="washi-tape tape-photo"></div>
 						<div class="photo-frame">
-							<img src="4.jpeg" alt="Moment 4" />
+							<img src="4.jpeg" alt="Moments 4 - Us in a nutshell" />
 						</div>
 						<p class="photo-caption">Us in a nutshell :p</p>
 					</div>
