@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T00:00:00.000Z",
+  "title": "Design System: Moon's Birthday",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#fdf8f0", "tonalRamp": ["#1a1612", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#ebe0d4", "#fdf8f0"] },
+      "paper-soft": { "role": "neutral", "displayName": "Warm Paper Soft", "canonical": "#f5ebe0", "tonalRamp": ["#1a1612", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#ebe0d4", "#fdf8f0"] },
+      "paper-dark": { "role": "neutral", "displayName": "Warm Paper Dark", "canonical": "#ebe0d4", "tonalRamp": ["#1a1612", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#ebe0d4", "#fdf8f0"] },
+      "ink": { "role": "neutral", "displayName": "Deep Ink", "canonical": "#241e17", "tonalRamp": ["#1a1612", "#241e17", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#fdf8f0"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#362f27", "tonalRamp": ["#1a1612", "#241e17", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#fdf8f0"] },
+      "ink-muted": { "role": "neutral", "displayName": "Muted Ink", "canonical": "#6b6156", "tonalRamp": ["#1a1612", "#241e17", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#fdf8f0"] },
+      "ink-pale": { "role": "neutral", "displayName": "Pale Ink", "canonical": "#665d54", "tonalRamp": ["#1a1612", "#241e17", "#362f27", "#4a4238", "#6b6156", "#9a8f83", "#c9c4ba", "#fdf8f0"] },
+      "accent-rose": { "role": "primary", "displayName": "Rose Accent", "canonical": "#e5989b", "tonalRamp": ["#4a1a20", "#782d36", "#a8444e", "#c95d68", "#e5989b", "#eebfc2", "#f7dfdf", "#fcf5f5"] },
+      "accent-rose-deep": { "role": "primary", "displayName": "Rose Deep", "canonical": "#a8444e", "tonalRamp": ["#4a1a20", "#782d36", "#a8444e", "#c95d68", "#e5989b", "#eebfc2", "#f7dfdf", "#fcf5f5"] },
+      "accent-sage": { "role": "secondary", "displayName": "Sage Accent", "canonical": "#8db596", "tonalRamp": ["#1a3622", "#2d6342", "#4a9c6a", "#6bc98d", "#8db596", "#b0d1b8", "#d4ebe0", "#eaf7f0"] },
+      "accent-sage-deep": { "role": "secondary", "displayName": "Sage Deep", "canonical": "#749c7d", "tonalRamp": ["#1a3622", "#2d6342", "#4a9c6a", "#6bc98d", "#8db596", "#b0d1b8", "#d4ebe0", "#eaf7f0"] },
+      "accent-gold": { "role": "tertiary", "displayName": "Gold Accent", "canonical": "#d4a843", "tonalRamp": ["#4a360f", "#785716", "#a88225", "#c9a335", "#d4a843", "#e0be73", "#ede3b3", "#f7f1e0"] },
+      "accent-gold-deep": { "role": "tertiary", "displayName": "Gold Deep", "canonical": "#785716", "tonalRamp": ["#4a360f", "#785716", "#a88225", "#c9a335", "#d4a843", "#e0be73", "#ede3b3", "#f7f1e0"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero title only — the biggest emotional beat." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles (Chapter 1, 2, 3)." },
+      "title": { "displayName": "Title", "purpose": "Modal titles, hero subtitle, contact frame captions." },
+      "body": { "displayName": "Body", "purpose": "All paragraph text, letter content, section descriptions. Max ~65ch." },
+      "label": { "displayName": "Label", "purpose": "Chapter badges, nav links, frame numbers, dates." }
+    },
+    "shadows": [
+      { "name": "ambient-low", "value": "0 2px 8px rgba(36,30,23,0.1)", "purpose": "Tape strips, postage stamps, wax seal." },
+      { "name": "card-rest", "value": "0 16px 40px rgba(36,30,23,0.18)", "purpose": "Contact frames at rest." },
+      { "name": "card-hover", "value": "0 24px 64px rgba(36,30,23,0.22)", "purpose": "Contact frames on hover/tap." },
+      { "name": "modal", "value": "0 24px 64px rgba(36,30,23,0.22)", "purpose": "Diary and lightbox modals." },
+      { "name": "inner", "value": "inset 0 2px 6px rgba(36,30,23,0.06)", "purpose": "Video frame interior." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Default easing for all state transitions — no bounce." },
+      { "name": "dur-fast", "value": "160ms", "purpose": "Micro-interactions: hover, focus, tap feedback." },
+      { "name": "dur-normal", "value": "280ms", "purpose": "Component state changes: flap, lid, modal open." },
+      { "name": "dur-slow", "value": "450ms", "purpose": "Page-level transitions: scroll reveal, modal scale." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "900px" },
+      { "name": "mobile", "value": "600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Rose CTA — opens letter, secondary actions. 56px, 8px radius, 3px paper border.",
+      "html": "<button class=\"ds-btn-primary\"><span>Open Letter</span><svg class=\"btn-arrow\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { position: relative; min-width: 200px; height: 56px; padding: 0 32px; font-family: 'Caveat', cursive; font-size: clamp(22px, 2vw, 30px); font-weight: 700; color: #ffffff; background: #e5989b; border: 3px solid #fdf8f0; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; box-shadow: 0 8px 24px rgba(36,30,23,0.14), inset 0 -3px 0 rgba(0,0,0,0.15); transition: all 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.08) 100%); opacity: 0; transition: opacity 160ms; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 40px rgba(36,30,23,0.18), inset 0 -4px 0 rgba(0,0,0,0.18); } .ds-btn-primary:hover::before { opacity: 1; } .ds-btn-primary:active { transform: translateY(1px) scale(0.98); box-shadow: 0 2px 8px rgba(36,30,23,0.1); } .ds-btn-primary .btn-arrow { flex-shrink: 0; transition: transform 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-primary:hover .btn-arrow { transform: translateX(4px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Sage CTA — opens gallery. Same shape as primary, sage colors.",
+      "html": "<button class=\"ds-btn-secondary\"><span>Open Album</span><svg class=\"btn-arrow\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-secondary { position: relative; min-width: 200px; height: 56px; padding: 0 32px; font-family: 'Caveat', cursive; font-size: clamp(22px, 2vw, 30px); font-weight: 700; color: #ffffff; background: #8db596; border: 3px solid #749c7d; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; box-shadow: 0 8px 24px rgba(36,30,23,0.14), inset 0 -3px 0 rgba(0,0,0,0.15); transition: all 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-secondary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.08) 100%); opacity: 0; transition: opacity 160ms; } .ds-btn-secondary:hover, .ds-btn-secondary:focus-visible { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 40px rgba(36,30,23,0.18), inset 0 -4px 0 rgba(0,0,0,0.18); } .ds-btn-secondary:hover::before { opacity: 1; } .ds-btn-secondary:active { transform: translateY(1px) scale(0.98); box-shadow: 0 2px 8px rgba(36,30,23,0.1); } .ds-btn-secondary .btn-arrow { flex-shrink: 0; transition: transform 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-secondary:hover .btn-arrow { transform: translateX(4px); }"
+    },
+    {
+      "name": "Accent Button",
+      "kind": "button",
+      "refersTo": "button-accent",
+      "description": "Gold climax CTA — Watch Film. Wider (min-width 220px), gold colors.",
+      "html": "<button class=\"ds-btn-accent\"><svg class=\"play-icon\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\" fill=\"currentColor\"><path d=\"M8 5v14l11-7z\"/></svg><span>Watch Film</span></button>",
+      "css": ".ds-btn-accent { position: relative; min-width: 220px; height: 56px; padding: 0 32px; font-family: 'Caveat', cursive; font-size: clamp(22px, 2vw, 30px); font-weight: 700; color: #ffffff; background: #d4a843; border: 3px solid #785716; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; box-shadow: 0 8px 24px rgba(36,30,23,0.14), inset 0 -3px 0 rgba(0,0,0,0.15); transition: all 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-btn-accent::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.08) 100%); opacity: 0; transition: opacity 160ms; } .ds-btn-accent:hover, .ds-btn-accent:focus-visible { transform: translateY(-3px) scale(1.02); box-shadow: 0 16px 40px rgba(36,30,23,0.18), inset 0 -4px 0 rgba(0,0,0,0.18); } .ds-btn-accent:hover::before { opacity: 1; } .ds-btn-accent:active { transform: translateY(1px) scale(0.98); box-shadow: 0 2px 8px rgba(36,30,23,0.1); }"
+    },
+    {
+      "name": "Contact Frame",
+      "kind": "custom",
+      "refersTo": "contact-frame",
+      "description": "Signature container: ink border, top perforation, left sprockets, 24px inner padding, frame number badge.",
+      "html": "<article class=\"ds-contact-frame\"><div class=\"ds-perf\" aria-hidden=\"true\"></div><div class=\"ds-sprockets\" aria-hidden=\"true\"><span></span><span></span><span></span><span></span></div><div class=\"ds-frame-inner\"><!-- content --></div><div class=\"ds-frame-number\" aria-hidden=\"true\">1 / 3</div></article>",
+      "css": ".ds-contact-frame { position: relative; background: #fdf8f0; border: 3px solid #241e17; border-radius: 14px; box-shadow: 0 16px 40px rgba(36,30,23,0.18); overflow: hidden; transition: box-shadow 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-contact-frame:hover { box-shadow: 0 24px 64px rgba(36,30,23,0.22); } .ds-perf { position: absolute; top: 0; left: 0; right: 0; height: 18px; background: #241e17; background-image: radial-gradient(circle at 20px center, transparent 5px, #241e17 6px); background-size: 40px 100%; z-index: 5; pointer-events: none; } .ds-sprockets { position: absolute; top: 0; bottom: 0; left: 0; width: 18px; background: #241e17; background-image: radial-gradient(circle at center 20px, transparent 5px, #241e17 6px); background-size: 100% 40px; z-index: 5; pointer-events: none; display: flex; flex-direction: column; } .ds-sprockets span { flex: 1; } .ds-frame-inner { position: relative; z-index: 2; padding: 24px; } .ds-frame-number { position: absolute; bottom: 12px; right: 16px; font-family: 'Caveat', cursive; font-size: clamp(12px, 1vw, 14px); font-weight: 700; color: #665d54; background: #fdf8f0; padding: 2px 10px; border-radius: 9999px; border: 1px solid #ebe0d4; z-index: 10; pointer-events: none; }"
+    },
+    {
+      "name": "Diary Modal",
+      "kind": "custom",
+      "refersTo": "modal-card",
+      "description": "Vintage diary: organic radius, gold border, pink bookmark ribbon, yellow tape, notebook paper lines.",
+      "html": "<div class=\"ds-modal-overlay\"><div class=\"ds-modal-card\"><div class=\"ds-bookmark\" aria-hidden=\"true\"></div><div class=\"ds-tape-modal\" aria-hidden=\"true\"></div><button class=\"ds-modal-close\" aria-label=\"Close\">&times;</button><header class=\"ds-modal-header\"><h3 class=\"ds-modal-title\">A Special Message for You</h3></header><div class=\"ds-modal-body ds-notebook-paper\"><p>Letter content...</p></div></div></div>",
+      "css": ".ds-modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(36,30,23,0.88); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); padding: 24px; } .ds-modal-overlay.active { opacity: 1; visibility: visible; } .ds-modal-card { background: #fdf8f0; background-image: url('./texture.png'); background-repeat: repeat; background-size: 280px; color: #241e17; width: 100%; max-width: 720px; max-height: 88vh; border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px; padding: 48px; box-sizing: border-box; position: relative; box-shadow: 0 24px 64px rgba(36,30,23,0.22), 0 0 0 1px rgba(255,255,255,0.2) inset; transform: scale(0.94) translateY(20px); transition: transform 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; flex-direction: column; border: 3px solid #d4a843; } .ds-modal-overlay.active .ds-modal-card { transform: scale(1) translateY(0); } .ds-bookmark { position: absolute; top: -12px; left: 40px; width: 22px; height: 70px; background: linear-gradient(180deg, #e5989b 0%, #a8444e 100%); border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; box-shadow: 2px 6px 16px rgba(209,125,131,0.4); z-index: 15; } .ds-bookmark::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 11px solid transparent; border-right: 11px solid transparent; border-top: 12px solid #a8444e; } .ds-tape-modal { position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-1deg); width: 140px; height: 22px; background: rgba(180,165,140,0.85); border: 1px dashed rgba(36,30,23,0.25); pointer-events: none; z-index: 5; } .ds-tape-modal::before, .ds-tape-modal::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(36,30,23,0.12) 4px, rgba(36,30,23,0.12) 8px); } .ds-tape-modal::before { top: 0; } .ds-tape-modal::after { bottom: 0; } .ds-modal-close { position: absolute; top: 20px; right: 24px; width: 44px; height: 44px; padding: 0; background: #fdf8f0; color: #6b6156; border: 2px dashed #d4a843; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 28px; font-weight: 700; line-height: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94); z-index: 20; box-shadow: 0 2px 8px rgba(36,30,23,0.1); } .ds-modal-close:hover, .ds-modal-close:focus-visible { color: #fdf8f0; background: #d4a843; border-color: #d4a843; transform: scale(1.1) rotate(90deg); box-shadow: 0 8px 24px rgba(36,30,23,0.14); } .ds-modal-header { margin-bottom: 24px; text-align: center; } .ds-modal-title { font-family: 'Caveat', cursive; font-size: clamp(32px, 3vw, 44px); font-weight: 700; color: #241e17; margin: 0; text-shadow: 0 1px 0 rgba(255,255,255,0.5); } .ds-modal-body { overflow-y: auto; font-family: 'Patrick Hand', cursive; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.75; color: #241e17; text-align: left; padding-right: 20px; max-height: 60vh; } .ds-modal-body p { margin: 0 0 1.2em; text-indent: 1.5em; } .ds-modal-body p:first-child { text-indent: 0; } .ds-notebook-paper { background-image: repeating-linear-gradient(#fdf8f0, #fdf8f0 34px, rgba(180,165,140,0.2) 34px, rgba(180,165,140,0.2) 35px); padding: 0 20px 0 32px; }"
+    },
+    {
+      "name": "Navbar",
+      "kind": "nav",
+      "refersTo": "navbar",
+      "description": "Floating journal header: paper backdrop, dashed border, organic radius, Caveat brand, pill nav links.",
+      "html": "<header class=\"ds-navbar\" role=\"banner\"><div class=\"ds-brand\"><span class=\"ds-brand-moon\">Moon's </span><span class=\"ds-brand-birthday\">Birthday</span></div><nav class=\"ds-nav-links\" aria-label=\"Main Navigation\"><a href=\"#message\" class=\"ds-nav-item\">Message</a><a href=\"#gallery\" class=\"ds-nav-item\">Gallery</a><a href=\"#present\" class=\"ds-nav-item\">Present</a></nav></header>",
+      "css": ".ds-navbar { position: sticky; top: 16px; z-index: 100; width: calc(100% - 32px); max-width: 1120px; margin: 16px auto 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; background: rgba(253,248,240,0.92); backdrop-filter: blur(12px); border-radius: 14px; border: 2px solid #ebe0d4; box-shadow: 0 8px 24px rgba(36,30,23,0.14), inset 0 1px 0 rgba(255,255,255,0.6); transition: box-shadow 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94), border-color 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); } .ds-navbar:hover { box-shadow: 0 16px 40px rgba(36,30,23,0.18), inset 0 1px 0 rgba(255,255,255,0.8); border-color: #d4a843; } .ds-brand { font-family: 'Caveat', cursive; font-size: clamp(26px, 2.2vw, 34px); font-weight: 700; letter-spacing: 0.02em; color: #241e17; text-shadow: 0 1px 0 rgba(255,255,255,0.5); white-space: nowrap; } .ds-brand-birthday { color: #a8444e; } .ds-nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; } .ds-nav-item { color: #6b6156; font-family: 'Caveat', cursive; font-size: clamp(16px, 1.4vw, 20px); font-weight: 700; text-decoration: none; padding: 8px 16px; border-radius: 9999px; transition: all 160ms cubic-bezier(0.25, 0.46, 0.45, 0.94); min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; position: relative; } .ds-nav-item::after { content: ''; position: absolute; bottom: 4px; left: 50%; width: 0; height: 2px; background: #e5989b; transition: all 280ms cubic-bezier(0.25, 0.46, 0.45, 0.94); transform: translateX(-50%); } .ds-nav-item:hover, .ds-nav-item:focus-visible { color: #241e17; background: #e5989b; transform: translateY(-2px); } .ds-nav-item:hover::after, .ds-nav-item:focus-visible::after { width: 80%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Contact-Sheet Journal",
+    "overview": "A birthday gift designed as a personal film contact sheet — structured, tactile, and intimate. Memories are organized in clean frames with film-edge perforations, handwritten notes in the margins, and a ceremonial video screening box that opens like a gift. The system rejects random rotations and competing decorative tapes in favor of deliberate alignment, a restrained warm-paper palette, and purposeful accents that guide the eye through a three-chapter story: greeting → letter → gallery → film.",
+    "keyCharacteristics": [
+      "Warm paper ground (#fdf8f0) with subtle grain texture",
+      "Deep ink (#241e17) for primary text, softened for hierarchy",
+      "Three accent roles: rose (love/warmth), sage (growth/memory), gold (ceremony/climax)",
+      "Caveat for expressive headings, Patrick Hand for readable body copy",
+      "Film contact-sheet geometry: perforated edges, sprocket holes, frame numbers",
+      "Single signature easing (cubic-bezier 0.25, 0.46, 0.45, 0.94) — no bounce",
+      "Mobile-first intimacy: generous touch targets, readable type at default zoom"
+    ],
+    "rules": [
+      { "name": "The Three-Role Rule", "body": "Each accent color owns one chapter and one interaction class: rose = Chapter 1 (letter) + primary actions; sage = Chapter 2 (gallery) + secondary actions; gold = Chapter 3 (video) + focus/climax. No accent crosses chapters.", "section": "colors" },
+      { "name": "The No-Bounce Rule", "body": "All transitions use cubic-bezier(0.25, 0.46, 0.45, 0.94). No overshoot, no elastic easing. Physical paper doesn't bounce.", "section": "colors" },
+      { "name": "The Film Frame Rule", "body": "Every content container is a contact frame: 3px ink border, perforated top edge, left sprocket holes, frame number badge. Consistency builds the journal metaphor.", "section": "colors" },
+      { "name": "The Two-Font Rule", "body": "Caveat for anything that speaks in the giver's voice (headlines, prompts, CTAs). Patrick Hand for anything that speaks in the recipient's reading voice (body copy, captions, metadata). Never swap.", "section": "typography" },
+      { "name": "The Clamp Rule", "body": "All font sizes use fluid clamp() with viewport width. No fixed px sizes. The journal must read at phone, tablet, and desktop without horizontal scroll.", "section": "typography" },
+      { "name": "The 8px Grid Rule", "body": "Every spacing value is a multiple of 8px. No magic numbers.", "section": "layout" },
+      { "name": "The Center Stack Rule", "body": "Sections are flex-column centered. No sidebar layouts, no asymmetric two-column text/image splits. The contact frame is the hero; everything serves it.", "section": "layout" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Shadows appear only on the contact-frame component and modals — the two \"lifted\" surfaces in the system.", "section": "elevation" },
+      { "name": "The Backdrop Rule", "body": "Modals use a dark semi-transparent backdrop (rgba(36,30,23,0.88)) with 10px blur. The journal page dims; the diary page brightens.", "section": "elevation" },
+      { "name": "The Perforation Rule", "body": "Every contact frame has a top perforation strip and left sprocket holes. No exceptions. This is the visual DNA of the system.", "section": "shapes" },
+      { "name": "The Organic Modal Rule", "body": "Only the modal card uses asymmetric organic radius. All other components use clean geometric radii. The modal is the \"open book\"; the frames are \"film negatives.\"", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use the contact-frame component for every content container — hero, envelope, gallery items, screening box.",
+      "Do keep the three accent colors in their assigned chapters (rose→Ch1, sage→Ch2, gold→Ch3).",
+      "Do use Caveat for giver's voice, Patrick Hand for recipient's reading voice.",
+      "Do animate the envelope flap (rotateX) and screening lid (rotateX) — they are the two \"physical\" interactions.",
+      "Do respect prefers-reduced-motion: disable all animations, transitions, and scroll-behavior.",
+      "Do maintain 44px minimum touch targets on all interactive elements.",
+      "Do use fluid clamp() for all type sizes and key spacing."
+    ],
+    "donts": [
+      "Don't add random rotations to frames — the contact sheet is aligned. The hero has one subtle rose tape (-1deg); the envelope has one subtle green tape (0.5deg). That's it.",
+      "Don't use bounce or elastic easing anywhere. The easing is cubic-bezier(0.25, 0.46, 0.45, 0.94) everywhere.",
+      "Don't nest contact frames inside each other. One frame per content unit.",
+      "Don't use the cream body background (#e8ddd4) as a card background — cards use --paper (#fdf8f0).",
+      "Don't add decorative repeating-gradient stripes outside the film perforations and tape edges.",
+      "Don't put borders on rounded elements that clash (the bookmark ribbon tip uses border-top on a pseudo-element positioned below the ribbon, not on the rounded ribbon itself).",
+      "Don't use more than three accent colors. The system has exactly three: rose, sage, gold.",
+      "Don't make the video section feel like an afterthought. The screening box with animated lid IS the climax — give it space (120px bottom padding on section)."
+    ]
+  }
+}
